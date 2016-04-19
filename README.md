@@ -15,6 +15,86 @@ Android-TransitionAnimation
 
 ![](http://ww4.sinaimg.cn/mw690/7ef01fcajw1f3269yhcb7g20bb0hhhdu.gif)
 
+搞出来之后，觉得解决反编译出来的魔法数字、代码、理解原作者所写的实现方式的等诸多问题都不是问题了，至少知道了它原来是这样炫出来的。
+
+###简单讲讲实现方式
+
+####(1)点击Fab按钮触发当前fragment离开的动画事件
+```java
+TransitionHelper.startExitAnim(WaterFragment.this.root);
+```
+跟进去看看是这样的
+```java
+    public static void startExitAnim(View paramView) {
+        exitAnimate((DepthLayout) paramView.findViewById(R.id.root_dl), 0.0F, 30.0F, 15L, 190, true);
+        exitAnimate((DepthLayout) paramView.findViewById(R.id.appbar), 15.0F, 20.0F, 30L, 170, true);
+        exitAnimate((DepthLayout) paramView.findViewById(R.id.fab_container), 30.0F, 20.0F, 45L, 210, true);
+        exitAnimate((DepthLayout) paramView.findViewById(R.id.dl2), 15.0F, 20.0F, 60L, 230, true);
+        exitAnimate((DepthLayout) paramView.findViewById(R.id.dl3), 30.0F, 20.0F, 75L, 250, true);
+        hideStatusBar(paramView);
+    }
+```
+通过传入的`paramView`找到内部的child view 并各自做离开时的动画，`exitAnimate`方法在`TransitionHelper`类中，这个是动画的帮助类，其中视图进入的动画，恢复动画等方法都在这里做了实现，具体可以看源码了解更多。
+####(2)当前fragment离开后，另一个fragment进入
+```java
+localWindFragment.setIntroAnimate(true);
+((RootActivity) WaterFragment.this.getActivity()).goToFragment(localWindFragment);
+```
+进入的动画效果在`TransitionHelper`类中的一个`introAnimate`方法实现,主要是一些view视图的缩小、移动动画，具体看源码。
+
+####(3)层级关系
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<com.cjj.customview.DepthRendrer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <com.cjj.customview.DepthLayout
+        ...
+        android:paddingTop="@dimen/appbar_height">
+        <ImageView
+            ...
+            />
+    </com.cjj.customview.DepthLayout>
+    
+
+    <com.cjj.customview.DepthLayout
+        ...
+        app:edge_color="@color/statusbar2">
+
+        <ImageView
+           .../>
+
+        <TextView
+          .../>
+    </com.cjj.customview.DepthLayout>
+  
+    <com.cjj.customview.DepthLayout
+        ......
+        app:custom_elevation="6.0dip"
+        app:edge_color="#ff9a6a70"
+        app:is_circle="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_forward"
+          />
+    </com.cjj.customview.DepthLayout>
+</com.cjj.customview.DepthRendrer>
+```
+从xml文件中，可以看出定义的DepthRendrer、DepthLayout，它们都继承了RelativeLayout，并实现绘制阴影等效果。
+
+*注意：过多的图层嵌套，导致了掉帧的了情况，这是可以优化的。有时间我优化下，不过效果还是蛮流畅的，你可以真机试试。
+
+
+
+
+
 
 
 
