@@ -92,6 +92,10 @@ localWindFragment.setIntroAnimate(true);
 * 注意：过多的图层嵌套，导致了掉帧的了情况，这是可以优化的。有时间我优化下，不过效果还是蛮流畅的，你可以真机试试。
 
 
+###感谢
+[https://play.google.com/store/apps/details?id=no.agens.depth](https://play.google.com/store/apps/details?id=no.agens.depth)
+
+
 ###关于我
 如果你喜欢这个东东的话，可以关注我[github](https://github.com/android-cjj) ,也可以关注我微博[Android_cJJ](http://weibo.com/chenjijun2011/).
 
