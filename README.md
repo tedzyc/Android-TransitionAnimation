@@ -89,7 +89,39 @@ localWindFragment.setIntroAnimate(true);
 ```
 从xml文件中，可以看出定义的DepthRendrer、DepthLayout，它们都继承了RelativeLayout，并实现绘制阴影等效果。
 
-*注意：过多的图层嵌套，导致了掉帧的了情况，这是可以优化的。有时间我优化下，不过效果还是蛮流畅的，你可以真机试试。
+* 注意：过多的图层嵌套，导致了掉帧的了情况，这是可以优化的。有时间我优化下，不过效果还是蛮流畅的，你可以真机试试。
+
+
+###关于我
+如果你喜欢这个东东的话，可以关注我[github](https://github.com/android-cjj) ,也可以关注我微博[Android_cJJ](http://weibo.com/chenjijun2011/).
+
+
+License
+=======
+
+    The MIT License (MIT)
+
+	Copyright (c) 2016 android-cjj
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+
 
 
 
