@@ -8,5 +8,10 @@ Android-TransitionAnimation
 ####我实现的效果如下：
 
 ![](http://ww2.sinaimg.cn/mw690/7ef01fcajw1f3269ss5scg20bb0hhhdu.gif)
+
+是不是吊炸天，我自己是被感动到了，不知道你看后有什么感受没？
+
+如果觉得太快没看清，没事，这里还有慢动作的效果：
+
 ![](http://ww4.sinaimg.cn/mw690/7ef01fcajw1f3269yhcb7g20bb0hhhdu.gif)
 
