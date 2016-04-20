@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+    <com.cjj.customview.CircularSplashView
+        android:id="@+id/circle"
+        android:layout_width="15.0dip"
+        android:layout_height="15.0dip"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25.0dip"/>
+
+    <TextView
+        android:id="@+id/item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="65.0dip"
+        android:textColor="@color/black"
+        android:textSize="16.0sp"/>
+</RelativeLayout>

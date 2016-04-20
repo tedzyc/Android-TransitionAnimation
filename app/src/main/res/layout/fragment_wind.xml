@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cjj.customview.DepthRendrer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.cjj.customview.DepthLayout
+        android:id="@+id/root_dl"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:layerType="hardware"
+        android:paddingTop="@dimen/appbar_height">
+
+        <ImageView
+            android:src="@mipmap/mingren"
+            android:id="@+id/water_scene"
+            android:layout_width="fill_parent"
+            android:layout_height="180.0dip"
+            android:background="@drawable/bear_bg_gradient"
+            />
+    </com.cjj.customview.DepthLayout>
+
+    <com.cjj.customview.DepthLayout
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@color/green"
+        android:layerType="hardware"
+        app:edge_color="@color/statusbar2">
+
+        <ImageView
+            android:id="@+id/staturbar_bg"
+            android:layout_width="fill_parent"
+            android:layout_height="24.0dip"
+            android:background="@color/statusbar2"/>
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56.0dip"
+            android:layout_height="56.0dip"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="65.0dip"
+            android:text="Depth"
+            android:textColor="@color/white"
+            android:textSize="18.0sp"/>
+    </com.cjj.customview.DepthLayout>
+
+    <ImageView
+        android:id="@+id/actionbar_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar"
+        android:background="@drawable/actionbar_shadow"/>
+
+    <com.cjj.customview.DepthLayout
+        android:id="@+id/dl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260.0dip"
+        android:background="@color/white"
+        android:layerType="hardware"
+        app:custom_elevation="1.0dip">
+
+        <LinearLayout
+            android:id="@+id/sliders_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_subheading_margin_top"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Wind Strength"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="16.0sp"/>
+
+            <SeekBar
+                android:id="@+id/wind_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                android:layout_marginRight="@dimen/seekbar_margin_sides"
+                android:layout_marginTop="@dimen/seekbar_margin_top"
+                android:padding="@dimen/seekbar_padding"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:background="@color/divider_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_subheading_margin_top"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Flames Height"
+                android:textColor="@color/black"
+                android:textSize="16.0sp"/>
+
+            <SeekBar
+                android:id="@+id/flames_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/seekbar_margin_sides"
+                android:layout_marginRight="@dimen/seekbar_margin_sides"
+                android:layout_marginTop="@dimen/seekbar_margin_top"
+                android:padding="@dimen/seekbar_padding"/>
+        </LinearLayout>
+    </com.cjj.customview.DepthLayout>
+
+    <com.cjj.customview.DepthLayout
+        android:id="@+id/dl3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="450.0dip"
+        android:background="@color/white"
+        android:layerType="hardware"
+        app:custom_elevation="2.0dip">
+
+        <TextView
+            android:id="@+id/about_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_subheading_margin_top"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="Two Bears"
+            android:textColor="@color/black"
+            android:textSize="16.0sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_heading"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="A particle experiment developed by Agens in 2015, as an example of how to draw advanced canvas based graphic´s with the Android SDK. "
+            android:textColor="@color/text_primary"
+            android:textSize="14.0sp"/>
+    </com.cjj.customview.DepthLayout>
+
+    <com.cjj.customview.DepthLayout
+        android:id="@+id/fab_container"
+        android:layout_width="56.0dip"
+        android:layout_height="56.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="232.0dip"
+        android:background="@drawable/circle"
+        android:layerType="hardware"
+        app:custom_elevation="6.0dip"
+        app:edge_color="#ff9a6a70"
+        app:is_circle="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_forward"
+          />
+    </com.cjj.customview.DepthLayout>
+</com.cjj.customview.DepthRendrer>
