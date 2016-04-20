@@ -54,9 +54,6 @@ public class WaterFragment extends Fragment implements MenuAnimation {
         }
     }
 
-    public void toastMsg(String msg){
-        Toast.makeText(getActivity(),msg,Toast.LENGTH_SHORT).show();
-    }
 
     private void setupFab() {
         this.root.findViewById(R.id.fab).setOnClickListener(new OnClickListener() {
